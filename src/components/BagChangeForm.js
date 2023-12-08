@@ -5,13 +5,13 @@ export default function BagChangeForm(props) {
   
   function createObject(event) {
     event.preventDefault();
-    props.onFormSubmit([props.currentBag,{
+    props.onFormSubmit(props.currentBag,{
       name: event.target.name.value,
       origin: event.target.origin.value,
       pricePerPound: event.target.pricePerPound.value,
       roast: event.target.roast.value,
       currentPounds: event.target.currentPounds.value,
-    }])
+    })
   }
   
   const styleCenterText = {
