@@ -14,9 +14,9 @@ export default function InventoryList(props) {
           <BagItem
           name = {bag.name}
           origin = {bag.origin}
-          pricePerPound = {bag.pricePerPound}
+          pricePerPound = {parseInt(bag.pricePerPound)}
           roast = {bag.roast}
-          currentPounds = {bag.currentPounds}
+          currentPounds = {parseInt(bag.currentPounds)}
           id = {bag.id}
           key = {bag.id}
           onEditClick = {props.buttonActionBagCallEdit}
