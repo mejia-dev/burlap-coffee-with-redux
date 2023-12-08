@@ -2,8 +2,9 @@ import React from "react";
 import NavButtons from "./NavButtons";
 import { v4 } from 'uuid';
 import InventoryList from "./InventoryList";
+import BagChangeForm from "./BagChangeForm";
 // import BagDetails from "./BagDetails";
-// import BagChangeForm from "./BagChangeForm";
+
 
 class BeanMachine extends React.Component {
   constructor(props) {
@@ -104,7 +105,10 @@ class BeanMachine extends React.Component {
 
       currentScreen = (
         <React.Fragment>
-          <h3>{changeMode} Coffee Bag</h3>
+          <BagChangeForm 
+            changeOption={changeMode}
+            bag={this.state.dataBagSelectedForEdit}
+          />
         </React.Fragment>
       )
     } else {
