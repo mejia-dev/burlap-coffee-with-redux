@@ -54,12 +54,13 @@ class BeanMachine extends React.Component {
   };
 
   handleButtonDisplayEditBag = (bagID) => {
+    const selectedBag = this.state.dataBagInventory.filter((bag) => bag.id === bagID)[0];
     this.setState({
       displayInventory: false,
       displayBagChange: true,
       displayBagChangeMode: "Edit",
       displayBagDetails: false,
-      dataBagSelectedForEdit: bagID,
+      dataBagSelectedForEdit: selectedBag,
     })
   };
 
@@ -100,7 +101,7 @@ class BeanMachine extends React.Component {
     } else if (this.state.displayBagChange === true) {
       currentScreen = (
         <React.Fragment>
-          <BagChangeForm 
+          <BagChangeForm
             changeMode={this.state.displayBagChangeMode}
             bag={this.state.dataBagSelectedForEdit}
           />
