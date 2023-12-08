@@ -77,7 +77,7 @@ class BeanMachine extends React.Component {
       currentScreen = (
         <React.Fragment>
           <InventoryList
-            coffeeBagInventory={this.dataBagInventory}
+            coffeeBagInventory={this.state.dataBagInventory}
             buttonActionBagCallEdit={this.handleButtonDisplayEditBag}
             buttonActionBagSellPound={this.handleButtonDataBagDecrementPounds}
           />
