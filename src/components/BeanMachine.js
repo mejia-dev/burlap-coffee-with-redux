@@ -12,7 +12,7 @@ class BeanMachine extends React.Component {
     this.state = {
       displayInventory: true,
       displayBagChange: false,
-      displayBagChangeMode: "Add",
+      displayBagChangeMode: null,
       displayBagDetails: false,
       dataBagInventory: [
         {
@@ -79,6 +79,25 @@ class BeanMachine extends React.Component {
     });
   };
 
+  handleButtonDataAddFormSubmit = (oldBag,newBag) => {
+    const updatedBagInventory = this.state.dataBagInventory.concat({
+      name: newBag.name,
+      origin: newBag.origin,
+      pricePerPound: newBag.pricePerPound,
+      roast: newBag.roast,
+      currentPounds: newBag.currentPounds,
+      id: v4()
+    });
+    this.setState({
+      displayInventory: true,
+      displayBagChange: false,
+      displayBagChangeMode: null,
+      displayBagDetails: false,
+      dataBagInventory: updatedBagInventory,
+      dataBagSelectedForEdit: null
+    });
+  };
+
   handleButtonDataEditFormSubmit = (oldBag,newBag) => {
     const updatedBagInventory = this.state.dataBagInventory.map((bag) => {
       if (bag.id === oldBag.id) {
@@ -96,7 +115,7 @@ class BeanMachine extends React.Component {
     this.setState({
       displayInventory: true,
       displayBagChange: false,
-      displayBagChangeMode: "Add",
+      displayBagChangeMode: null,
       displayBagDetails: false,
       dataBagInventory: updatedBagInventory,
       dataBagSelectedForEdit: null
@@ -123,12 +142,20 @@ class BeanMachine extends React.Component {
         </React.Fragment>
       )
     } else if (this.state.displayBagChange === true) {
+      let passedBag = {}
+      let formSubmissionFunction;
+      if (this.state.displayBagChangeMode === "Edit") {
+        passedBag = this.state.dataBagSelectedForEdit
+        formSubmissionFunction = this.handleButtonDataEditFormSubmit
+      } else {
+        formSubmissionFunction = this.handleButtonDataAddFormSubmit
+      }
       currentScreen = (
         <React.Fragment>
           <BagChangeForm
             changeMode={this.state.displayBagChangeMode}
-            currentBag={this.state.dataBagSelectedForEdit}
-            onFormSubmit={this.handleButtonDataEditFormSubmit}
+            currentBag={passedBag}
+            onFormSubmit={formSubmissionFunction}
           />
         </React.Fragment>
       )
