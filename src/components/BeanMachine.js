@@ -1,5 +1,5 @@
 import React from "react";
-// import NavButtons from "./NavButtons";
+import NavButtons from "./NavButtons";
 // import InventoryList from "./InventoryList";
 // import BagDetails from "./BagDetails";
 // import BagChangeForm from "./BagChangeForm";
@@ -68,6 +68,10 @@ class BeanMachine extends React.Component {
 
     return (      
       <React.Fragment>
+        <NavButtons
+          buttonActionDisplayInventory = {this.handleButtonDisplayInventory}
+          buttonActionAddBag = {this.handleButtonDisplayAddBag}
+        />
         {currentScreen}
       </React.Fragment>
     );
