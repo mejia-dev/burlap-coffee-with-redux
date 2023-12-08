@@ -1,7 +1,7 @@
 import React from "react";
 import NavButtons from "./NavButtons";
 import { v4 } from 'uuid';
-// import InventoryList from "./InventoryList";
+import InventoryList from "./InventoryList";
 // import BagDetails from "./BagDetails";
 // import BagChangeForm from "./BagChangeForm";
 
@@ -77,6 +77,11 @@ class BeanMachine extends React.Component {
       currentScreen = (
         <React.Fragment>
           <h3>Inventory</h3>
+          <InventoryList
+            coffeeBagInventory={this.dataBagInventory}
+            buttonActionBagCallEdit={this.handleButtonDisplayEditBag}
+            buttonActionBagSellPound={this.handleButtonDataBagDecrementPounds}
+          />
         </React.Fragment>
       )
     } else if (this.state.displayBagDetails === true) {
