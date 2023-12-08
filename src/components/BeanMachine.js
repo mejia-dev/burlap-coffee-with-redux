@@ -98,15 +98,10 @@ class BeanMachine extends React.Component {
         </React.Fragment>
       )
     } else if (this.state.displayBagChange === true) {
-      let changeMode = "Add";
-      if (this.state.displayBagChangeMode === "Edit") {
-        changeMode = "Edit"
-      }
-
       currentScreen = (
         <React.Fragment>
           <BagChangeForm 
-            changeOption={changeMode}
+            changeMode={this.state.displayBagChangeMode}
             bag={this.state.dataBagSelectedForEdit}
           />
         </React.Fragment>
