@@ -21,32 +21,32 @@ export default function BagChangeForm(props) {
         Name: <input
           type='text'
           name='name'
-          value={props.bag.name}
+          defaultValue={props.bag.name}
           placeholder='Name/type of beans'
           required /><br />
         Origin: <input
           type='text'
           name='origin'
-          value={props.bag.origin}
+          defaultValue={props.bag.origin}
           placeholder='Origin location of beans'
           required /><br />
         Price: $<input
           type='number'
           name='pricePerPound'
-          value={props.bag.pricePerPound}
+          defaultValue={props.bag.pricePerPound}
           placeholder='Price per pound'
           min='1'
           required /><br />
         Roast: <input
           type='text'
           name='roast'
-          value={props.bag.roast}
+          defaultValue={props.bag.roast}
           placeholder='Light, medium, dark, etc.'
           required /><br />
         Current Stock: <input
           type='number'
           name='currentPounds'
-          value={props.bag.currentPounds}
+          defaultValue={props.bag.currentPounds}
           placeholder='Current pounds of beans in the bag'
           min='1'
           required /><br /><br />
