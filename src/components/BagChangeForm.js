@@ -2,6 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export default function BagChangeForm(props) {
+  
+  function createObject(event) {
+    event.preventDefault();
+    props.onFormSubmit([props.currentBag,{
+      name: event.target.name.value,
+      origin: event.target.origin.value,
+      pricePerPound: event.target.pricePerPound.value,
+      roast: event.target.roast.value,
+      currentPounds: event.target.currentPounds.value,
+    }])
+  }
+  
   const styleCenterText = {
     textAlign: "center",
   }
@@ -17,36 +29,36 @@ export default function BagChangeForm(props) {
     <React.Fragment>
       <div style={styleCenterText}>
         <h3>{props.changeMode} Coffee Bag</h3>
-        <form style={styleForm} onSubmit={props.onFormSubmit}>
+        <form style={styleForm} onSubmit={createObject}>
         Name: <input
           type='text'
           name='name'
-          defaultValue={props.bag.name}
+          defaultValue={props.currentBag.name}
           placeholder='Name/type of beans'
           required /><br />
         Origin: <input
           type='text'
           name='origin'
-          defaultValue={props.bag.origin}
+          defaultValue={props.currentBag.origin}
           placeholder='Origin location of beans'
           required /><br />
-        Price: $<input
+        Price Per Pound: $<input
           type='number'
           name='pricePerPound'
-          defaultValue={props.bag.pricePerPound}
+          defaultValue={props.currentBag.pricePerPound}
           placeholder='Price per pound'
           min='1'
           required /><br />
         Roast: <input
           type='text'
           name='roast'
-          defaultValue={props.bag.roast}
+          defaultValue={props.currentBag.roast}
           placeholder='Light, medium, dark, etc.'
           required /><br />
-        Current Stock: <input
+        Current # of Pounds: <input
           type='number'
           name='currentPounds'
-          defaultValue={props.bag.currentPounds}
+          defaultValue={props.currentBag.currentPounds}
           placeholder='Current pounds of beans in the bag'
           min='1'
           required /><br /><br />
@@ -61,6 +73,6 @@ export default function BagChangeForm(props) {
 
 BagChangeForm.propTypes = {
   changeMode: PropTypes.string,
-  bag: PropTypes.object,
+  currentBag: PropTypes.object,
   onFormSubmit: PropTypes.func
 }
