@@ -30,7 +30,8 @@ class BeanMachine extends React.Component {
           currentPounds: 130,
           id: v4()
         },
-      ]
+      ],
+      dataBagSelectedForEdit: null,
     }
   };
 
@@ -48,6 +49,16 @@ class BeanMachine extends React.Component {
       displayBagChange: true,
       displayBagChangeMode: "Add",
       displayBagDetails: false,
+    })
+  };
+
+  handleButtonDisplayEditBag = (bagID) => {
+    this.setState({
+      displayInventory: false,
+      displayBagChange: true,
+      displayBagChangeMode: "Edit",
+      displayBagDetails: false,
+      dataBagSelectedForEdit: bagID,
     })
   };
 
