@@ -66,17 +66,13 @@ class BeanMachine extends React.Component {
     const selectedBag = this.state.dataBagInventory.filter(
       (bag) => bag.id === bagID
     )[0];
-    // const newAmount = parseInt(selectedBag.currentPounds - amount);
-    // this.setState( {selectedBag[currentPounds]: newAmount} );
-
+    selectedBag.currentPounds -= amount;
     const newBagInventory = this.state.dataBagInventory.filter(
-      (bag) => bag.id != bagID
-    )
-    const updatedBag = selectedBag.currentPounds -= amount;
-
-    
-    console.log(this.state.dataBagInventory)
-    console.log(updatedBag)
+      (bag) => bag.id !== bagID
+    ).concat(selectedBag)
+    this.setState({
+      dataBagInventory: newBagInventory
+    });
   };
 
   render() {
