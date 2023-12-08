@@ -23,7 +23,7 @@ export default function InventoryList(props) {
           onSellClick = {props.buttonActionBagSellPound}
           />
           
-        )};
+        )}
       </div>
     </React.Fragment>
   );
