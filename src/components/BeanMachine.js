@@ -13,12 +13,13 @@ class BeanMachine extends React.Component {
       displayBagChange: false,
       displayBagChangeMode: "Add",
       displayBagDetails: false,
-      dataCoffeeBagInventory: [
+      dataBagInventory: [
         {
           name: "Arabica",
           origin: "Brazil",
           pricePerPound: 10,
           roast: "light",
+          currentPounds: 130,
           id: v4()
         },
         {
@@ -26,6 +27,7 @@ class BeanMachine extends React.Component {
           origin: "India",
           pricePerPound: 6,
           roast: "medium",
+          currentPounds: 130,
           id: v4()
         },
       ]
@@ -49,6 +51,14 @@ class BeanMachine extends React.Component {
     })
   };
 
+  handleButtonDataBagDecrementPounds = (bagID, amount) => {
+    const selectedBag = this.state.dataBagInventory.filter(
+      (bag) => bag.id === bagID
+    )[0];
+    const newAmount = parseInt(selectedBag.currentPounds - amount);
+    this.setState({ currentPounds: newAmount });
+  };
+
   render() {
     let currentScreen = null;
 
@@ -69,7 +79,7 @@ class BeanMachine extends React.Component {
       if (this.state.displayBagChangeMode === "Edit") {
         changeMode = "Edit"
       }
-      
+
       currentScreen = (
         <React.Fragment>
           <h3>{changeMode} Coffee Bag</h3>
@@ -83,11 +93,11 @@ class BeanMachine extends React.Component {
       )
     }
 
-    return (      
+    return (
       <React.Fragment>
         <NavButtons
-          buttonActionDisplayInventory = {this.handleButtonDisplayInventory}
-          buttonActionAddBag = {this.handleButtonDisplayAddBag}
+          buttonActionDisplayInventory={this.handleButtonDisplayInventory}
+          buttonActionAddBag={this.handleButtonDisplayAddBag}
         />
         {currentScreen}
       </React.Fragment>
