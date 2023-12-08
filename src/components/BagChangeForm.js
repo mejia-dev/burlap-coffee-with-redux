@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function BagChangeForm(props) {
-  
+function BagChangeForm(props) {
+
   function createObject(event) {
     event.preventDefault();
     props.onFormSubmit(props.currentBag,{
@@ -76,3 +76,5 @@ BagChangeForm.propTypes = {
   currentBag: PropTypes.object,
   onFormSubmit: PropTypes.func
 }
+
+export default BagChangeForm

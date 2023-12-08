@@ -79,6 +79,30 @@ class BeanMachine extends React.Component {
     });
   };
 
+  handleButtonDataEditFormSubmit = (oldBag,newBag) => {
+    const updatedBagInventory = this.state.dataBagInventory.map((bag) => {
+      if (bag.id === oldBag.id) {
+        return {
+          ...bag,
+          name: newBag.name,
+          origin: newBag.origin,
+          pricePerPound: newBag.pricePerPound,
+          roast: newBag.roast,
+          currentPounds: newBag.currentPounds,
+        };
+      }
+      return bag;
+    });
+    this.setState({
+      displayInventory: true,
+      displayBagChange: false,
+      displayBagChangeMode: "Add",
+      displayBagDetails: false,
+      dataBagInventory: updatedBagInventory,
+      dataBagSelectedForEdit: null
+    });
+  };
+
   render() {
     let currentScreen = null;
 
@@ -103,7 +127,8 @@ class BeanMachine extends React.Component {
         <React.Fragment>
           <BagChangeForm
             changeMode={this.state.displayBagChangeMode}
-            bag={this.state.dataBagSelectedForEdit}
+            currentBag={this.state.dataBagSelectedForEdit}
+            onFormSubmit={this.handleButtonDataEditFormSubmit}
           />
         </React.Fragment>
       )
