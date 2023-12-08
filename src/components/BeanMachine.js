@@ -1,5 +1,6 @@
 import React from "react";
 import NavButtons from "./NavButtons";
+import { v4 } from 'uuid';
 // import InventoryList from "./InventoryList";
 // import BagDetails from "./BagDetails";
 // import BagChangeForm from "./BagChangeForm";
@@ -12,6 +13,22 @@ class BeanMachine extends React.Component {
       displayBagChange: false,
       displayBagChangeMode: "Add",
       displayBagDetails: false,
+      dataCoffeeBagInventory: [
+        {
+          name: "Arabica",
+          origin: "Brazil",
+          pricePerPound: 10,
+          roast: "light",
+          id: v4()
+        },
+        {
+          name: "Robusta",
+          origin: "India",
+          pricePerPound: 6,
+          roast: "medium",
+          id: v4()
+        },
+      ]
     }
   };
 
