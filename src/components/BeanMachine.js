@@ -64,6 +64,17 @@ class BeanMachine extends React.Component {
     })
   };
 
+  handleButtonDisplayBagDetails = (bagID) => {
+    const selectedBag = this.state.dataBagInventory.filter((bag) => bag.id === bagID)[0];
+    this.setState({
+      displayInventory: false,
+      displayBagChange: false,
+      displayBagChangeMode: null,
+      displayBagDetails: true,
+      dataBagCurrentlySelected: selectedBag,
+    })
+  };
+
   handleButtonDataBagDecrementPounds = (bagID, amount) => {
     const updatedBagInventory = this.state.dataBagInventory.map((bag) => {
       if (bag.id === bagID) {
