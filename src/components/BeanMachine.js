@@ -79,7 +79,7 @@ class BeanMachine extends React.Component {
     });
   };
 
-  handleButtonDataAddFormSubmit = (oldBag,newBag) => {
+  handleButtonDataAddFormSubmit = (newBag) => {
     const updatedBagInventory = this.state.dataBagInventory.concat({
       name: newBag.name,
       origin: newBag.origin,
@@ -98,7 +98,7 @@ class BeanMachine extends React.Component {
     });
   };
 
-  handleButtonDataEditFormSubmit = (oldBag,newBag) => {
+  handleButtonDataEditFormSubmit = (newBag,oldBag) => {
     const updatedBagInventory = this.state.dataBagInventory.map((bag) => {
       if (bag.id === oldBag.id) {
         return {
