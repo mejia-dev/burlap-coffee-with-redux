@@ -8,8 +8,8 @@ export default function InventoryList(props) {
   }
   return (
     <React.Fragment>
-      <h3>Inventory</h3>
       <div style={styleCenterText}>
+        <h3>Inventory</h3>
         {props.coffeeBagInventory.map((bag) =>
           <BagItem
           name = {bag.name}
