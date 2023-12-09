@@ -19,6 +19,7 @@ export default function InventoryList(props) {
           currentPounds = {parseInt(bag.currentPounds)}
           id = {bag.id}
           key = {bag.id}
+          onItemClick = {props.clickActionViewDetails}
           onEditClick = {props.buttonActionBagCallEdit}
           onSellClick = {props.buttonActionBagSellPound}
           />
@@ -32,5 +33,6 @@ export default function InventoryList(props) {
 InventoryList.propTypes = {
   coffeeBagInventory: PropTypes.array,
   buttonActionBagCallEdit: PropTypes.func,
-  buttonActionBagSellPound: PropTypes.func
+  buttonActionBagSellPound: PropTypes.func,
+  clickActionViewDetails: PropTypes.func
 }
