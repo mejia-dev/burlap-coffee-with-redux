@@ -143,6 +143,7 @@ class BeanMachine extends React.Component {
             coffeeBagInventory={this.state.dataBagInventory}
             buttonActionBagCallEdit={this.handleButtonDisplayEditBag}
             buttonActionBagSellPound={this.handleButtonDataBagDecrementPounds}
+            clickActionViewDetails={this.handleButtonDisplayBagDetails}
           />
         </React.Fragment>
       )
