@@ -32,7 +32,7 @@ class BeanMachine extends React.Component {
           id: v4()
         },
       ],
-      dataBagSelectedForEdit: null,
+      dataBagCurrentlySelected: null,
     }
   };
 
@@ -60,7 +60,7 @@ class BeanMachine extends React.Component {
       displayBagChange: true,
       displayBagChangeMode: "Edit",
       displayBagDetails: false,
-      dataBagSelectedForEdit: selectedBag,
+      dataBagCurrentlySelected: selectedBag,
     })
   };
 
@@ -94,7 +94,7 @@ class BeanMachine extends React.Component {
       displayBagChangeMode: null,
       displayBagDetails: false,
       dataBagInventory: updatedBagInventory,
-      dataBagSelectedForEdit: null
+      dataBagCurrentlySelected: null
     });
   };
 
@@ -118,7 +118,7 @@ class BeanMachine extends React.Component {
       displayBagChangeMode: null,
       displayBagDetails: false,
       dataBagInventory: updatedBagInventory,
-      dataBagSelectedForEdit: null
+      dataBagCurrentlySelected: null
     });
   };
 
@@ -145,7 +145,7 @@ class BeanMachine extends React.Component {
       let passedBag = {}
       let formSubmissionFunction;
       if (this.state.displayBagChangeMode === "Edit") {
-        passedBag = this.state.dataBagSelectedForEdit
+        passedBag = this.state.dataBagCurrentlySelected
         formSubmissionFunction = this.handleButtonDataEditFormSubmit
       } else {
         formSubmissionFunction = this.handleButtonDataAddFormSubmit
