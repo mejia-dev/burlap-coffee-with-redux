@@ -23,7 +23,7 @@ export default function BagDetails(props) {
   return (
     <React.Fragment>
       <div style={styleCenterText}>
-      <h3>Coffee Bag Details</h3>
+        <h3>Coffee Bag Details</h3>
         <div style={styleBagText}>
           <h4>Bean: {props.currentBag.name}</h4>
           <p>
