@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header";
 import BeanMachine from "./BeanMachine";
 
-function App() {
+export default function App() {
   return (
     <React.Fragment>
       <Header />
@@ -10,5 +10,3 @@ function App() {
     </React.Fragment>
   );
 }
-
-export default App;
