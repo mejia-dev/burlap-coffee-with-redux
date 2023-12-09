@@ -12,18 +12,17 @@ export default function InventoryList(props) {
         <h3>Inventory</h3>
         {props.coffeeBagInventory.map((bag) =>
           <BagItem
-          name = {bag.name}
-          origin = {bag.origin}
-          pricePerPound = {parseInt(bag.pricePerPound)}
-          roast = {bag.roast}
-          currentPounds = {parseInt(bag.currentPounds)}
-          id = {bag.id}
-          key = {bag.id}
-          onItemClick = {props.clickActionViewDetails}
-          onEditClick = {props.buttonActionBagCallEdit}
-          onSellClick = {props.buttonActionBagSellPound}
+            name={bag.name}
+            origin={bag.origin}
+            pricePerPound={parseInt(bag.pricePerPound)}
+            roast={bag.roast}
+            currentPounds={parseInt(bag.currentPounds)}
+            id={bag.id}
+            key={bag.id}
+            onItemClick={props.clickActionViewDetails}
+            onEditClick={props.buttonActionBagCallEdit}
+            onSellClick={props.buttonActionBagSellPound}
           />
-          
         )}
       </div>
     </React.Fragment>
