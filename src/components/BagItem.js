@@ -16,13 +16,14 @@ export default function BagItem(props) {
     <React.Fragment>
       <br />
       <div style={styleText}>
-        <h4>Bean: {props.name}</h4>
+        <div onClick={props.onItemClick}><h4>Bean: {props.name}</h4>
         <p>
           Origin: {props.origin}<br />
           Price Per Pound: ${props.pricePerPound}<br />
           Roast: {props.roast}<br />
           Current # of Pounds: {props.currentPounds}lbs<br />
         </p>
+        </div>
         <button onClick={() => props.onSellClick(bagID,1)}>Sell</button>
         <button onClick={() => props.onEditClick(bagID)}>Edit</button>
       </div>
@@ -37,6 +38,7 @@ BagItem.propTypes = {
   roast: PropTypes.string,
   currentPounds: PropTypes.number,
   id: PropTypes.string,
+  onItemClick: PropTypes.func,
   onEditClick: PropTypes.func,
   onSellClick: PropTypes.func,
 }
