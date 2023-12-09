@@ -18,25 +18,25 @@ export default function BagItem(props) {
   if (props.currentPounds <= 0) {
     sellAmount = 0;
     statusMessage = "Out of Stock"
-    statusMessageStyle = {color: "#FF2500"};
+    statusMessageStyle = { color: "#FF2500" };
   } else if (props.currentPounds < 10) {
     statusMessage = "Almost Empty"
-    statusMessageStyle = {color: "#FFB400"};
+    statusMessageStyle = { color: "#FFB400" };
   }
   return (
     <React.Fragment>
       <br />
       <div style={styleText}>
         <div onClick={() => props.onItemClick(props.id)}><h4>Bean: {props.name}</h4>
-        <p>
-          Origin: {props.origin}<br />
-          Price Per Pound: ${props.pricePerPound}<br />
-          Roast: {props.roast}<br />
-          Current # of Pounds: {props.currentPounds}lbs<br />
-          <span style={statusMessageStyle}>{statusMessage}</span>
-        </p>
+          <p>
+            Origin: {props.origin}<br />
+            Price Per Pound: ${props.pricePerPound}<br />
+            Roast: {props.roast}<br />
+            Current # of Pounds: {props.currentPounds}lbs<br />
+            <span style={statusMessageStyle}>{statusMessage}</span>
+          </p>
         </div>
-        <button onClick={() => props.onSellClick(bagID,sellAmount)}>Sell</button>
+        <button onClick={() => props.onSellClick(bagID, sellAmount)}>Sell</button>
         <button onClick={() => props.onEditClick(bagID)}>Edit</button>
       </div>
     </React.Fragment>
