@@ -133,6 +133,16 @@ class BeanMachine extends React.Component {
     });
   };
 
+  handleButtonDataBagDelete = (bagID) => {
+    const updatedBagInventory = this.state.dataBagInventory.filter((bag) => bag.id !== bagID);
+    this.setState({
+      displayInventory: true,
+      displayBagChange: false,
+      displayBagDetails: false,
+      dataBagInventory: updatedBagInventory
+    })
+  };
+
   render() {
     let currentScreen = null;
 
@@ -152,6 +162,7 @@ class BeanMachine extends React.Component {
         <React.Fragment>
           <BagDetails 
             currentBag={this.state.dataBagCurrentlySelected}
+            onDeleteClick={this.handleButtonDataBagDelete}
           />
         </React.Fragment>
       )

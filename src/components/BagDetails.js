@@ -13,6 +13,13 @@ export default function BagDetails(props) {
   const styleCenterText = {
     textAlign: "center",
   }
+  const styleDeleteButton = {
+    backgroundColor: "#751F1F",
+    borderRadius: "10px",
+    borderColor: "#4F4A4A",
+    color: "#FFFFFF"
+  }
+  const bagID = props.currentBag.id;
   return (
     <React.Fragment>
       <div style={styleCenterText}>
@@ -25,6 +32,7 @@ export default function BagDetails(props) {
             Roast: {props.currentBag.roast}<br />
             Current # of Pounds: {props.currentBag.currentPounds}lbs<br />
           </p>
+          <button style={styleDeleteButton} onClick={() => props.onDeleteClick(bagID)}>Delete Item</button>
         </div>
       </div>
     </React.Fragment>
@@ -32,5 +40,6 @@ export default function BagDetails(props) {
 }
 
 BagDetails.propTypes = {
-  currentBag: PropTypes.object
+  currentBag: PropTypes.object,
+  onDeleteClick: PropTypes.func
 }
