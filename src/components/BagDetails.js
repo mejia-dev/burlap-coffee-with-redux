@@ -13,20 +13,18 @@ export default function BagDetails(props) {
   const styleCenterText = {
     textAlign: "center",
   }
-  // const bagID = props.id;
   return (
     <React.Fragment>
       <div style={styleCenterText}>
       <h3>Coffee Bag Details</h3>
         <div style={styleBagText}>
-          <h4>Bean: {props.name}</h4>
+          <h4>Bean: {props.currentBag.name}</h4>
           <p>
-            Origin: {props.origin}<br />
-            Price Per Pound: ${props.pricePerPound}<br />
-            Roast: {props.roast}<br />
-            Current # of Pounds: {props.currentPounds}lbs<br />
+            Origin: {props.currentBag.origin}<br />
+            Price Per Pound: ${props.currentBag.pricePerPound}<br />
+            Roast: {props.currentBag.roast}<br />
+            Current # of Pounds: {props.currentBag.currentPounds}lbs<br />
           </p>
-          {/* <button onClick={() => props.onEditClick(bagID)}>Edit</button> */}
         </div>
       </div>
     </React.Fragment>
