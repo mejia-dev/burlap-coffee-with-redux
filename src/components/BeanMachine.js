@@ -5,8 +5,7 @@ import InventoryList from "./InventoryList";
 import BagChangeForm from "./BagChangeForm";
 import BagDetails from "./BagDetails";
 
-
-class BeanMachine extends React.Component {
+export default class BeanMachine extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -109,7 +108,7 @@ class BeanMachine extends React.Component {
     });
   };
 
-  handleButtonDataEditFormSubmit = (newBag,oldBag) => {
+  handleButtonDataEditFormSubmit = (newBag, oldBag) => {
     const updatedBagInventory = this.state.dataBagInventory.map((bag) => {
       if (bag.id === oldBag.id) {
         return {
@@ -145,7 +144,6 @@ class BeanMachine extends React.Component {
 
   render() {
     let currentScreen = null;
-
     if (this.state.displayInventory === true) {
       currentScreen = (
         <React.Fragment>
@@ -160,7 +158,7 @@ class BeanMachine extends React.Component {
     } else if (this.state.displayBagDetails === true) {
       currentScreen = (
         <React.Fragment>
-          <BagDetails 
+          <BagDetails
             currentBag={this.state.dataBagCurrentlySelected}
             onDeleteClick={this.handleButtonDataBagDelete}
           />
@@ -191,7 +189,6 @@ class BeanMachine extends React.Component {
         </React.Fragment>
       )
     }
-
     return (
       <React.Fragment>
         <NavButtons
@@ -203,5 +200,3 @@ class BeanMachine extends React.Component {
     );
   };
 }
-
-export default BeanMachine;
