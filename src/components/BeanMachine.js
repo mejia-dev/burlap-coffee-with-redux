@@ -3,7 +3,7 @@ import NavButtons from "./NavButtons";
 import { v4 } from 'uuid';
 import InventoryList from "./InventoryList";
 import BagChangeForm from "./BagChangeForm";
-// import BagDetails from "./BagDetails";
+import BagDetails from "./BagDetails";
 
 
 class BeanMachine extends React.Component {
@@ -150,7 +150,9 @@ class BeanMachine extends React.Component {
     } else if (this.state.displayBagDetails === true) {
       currentScreen = (
         <React.Fragment>
-          <h3>Coffee Bag Details</h3>
+          <BagDetails 
+            currentBag={this.state.dataBagCurrentlySelected}
+          />
         </React.Fragment>
       )
     } else if (this.state.displayBagChange === true) {
