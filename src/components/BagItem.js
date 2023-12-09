@@ -27,7 +27,7 @@ export default function BagItem(props) {
     <React.Fragment>
       <br />
       <div style={styleText}>
-        <div onClick={props.onItemClick}><h4>Bean: {props.name}</h4>
+        <div onClick={() => props.onItemClick(props.id)}><h4>Bean: {props.name}</h4>
         <p>
           Origin: {props.origin}<br />
           Price Per Pound: ${props.pricePerPound}<br />
