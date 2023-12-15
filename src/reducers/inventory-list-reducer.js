@@ -12,6 +12,10 @@ const ticketListReducer = (state = {}, action) => {
           id: id
         }
       });
+    case 'DELETE_BAG':
+      let modifiedState = {...state };
+      delete modifiedState[id];
+      return modifiedState;
     default:
       return state;
   }
