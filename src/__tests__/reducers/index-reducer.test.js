@@ -14,12 +14,26 @@ describe("rootReducer", () => {
     });
   });
 
-  test('Check that initial state of inventoryListReducer matches root reducer', () => {
+  test('Should confirm that initial state of inventoryListReducer matches rootReducer', () => {
     expect(store.getState().dataBagInventory).toEqual(inventoryListReducer(undefined, { type: null }));
   });
   
-  test('Check that initial state of selectedBagReducer matches root reducer', () => {
+  test('Should confirm that initial state of selectedBagReducer matches rootReducer', () => {
     expect(store.getState().dataBagCurrentlySelected).toEqual(selectedBagReducer(undefined, { type: null }));
+  });
+  
+  test('Should confirm that ADD_BAG action works the same between inventoryListReducer and rootReducer', () => {
+    const action = {
+      type: 'ADD_BAG',
+      name: "Arabica",
+      origin: "Brazil",
+      pricePerPound: 10,
+      roast: "light",
+      currentPounds: 130,
+      id: 1
+    }
+    store.dispatch(action);
+    expect(store.getState().dataBagInventory).toEqual(inventoryListReducer({}, action));
   });
 
 });
