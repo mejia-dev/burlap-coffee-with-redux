@@ -33,7 +33,7 @@ class BeanMachine extends React.Component {
       //     id: v4()
       //   },
       // ],
-      dataBagCurrentlySelected: null,
+      // dataBagCurrentlySelected: null,
     }
   };
 
@@ -55,13 +55,23 @@ class BeanMachine extends React.Component {
   };
 
   handleButtonDisplayEditBag = (bagID) => {
+    const { dispatch } = this.props;
     const selectedBag = Object.values(this.props.dataBagInventory).filter((bag) => bag.id === bagID)[0];
+    const action = {
+      type: 'SET_BAG',
+      name: selectedBag.name,
+      origin: selectedBag.origin,
+      pricePerPound: selectedBag.pricePerPound,
+      roast: selectedBag.roast,
+      currentPounds: selectedBag.currentPounds,
+      id: selectedBag.id
+    }
+    dispatch(action);
     this.setState({
       displayInventory: false,
       displayBagChange: true,
       displayBagChangeMode: "Edit",
       displayBagDetails: false,
-      dataBagCurrentlySelected: selectedBag,
     })
   };
 
