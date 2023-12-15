@@ -25,7 +25,7 @@ describe('inventoryListReducer', () => {
       currentPounds: currentPounds,
       id: id
     }
-    expect(inventoryListReducer({}, { action })).toEqual({
+    expect(inventoryListReducer({}, action)).toEqual({
       [id] : {
         name: name,
         origin: origin,
