@@ -42,4 +42,8 @@ describe('selectedBagReducer', () => {
       id: 1
     });
   });
+
+  test("Should reset the state to be null", () => {
+    expect(selectedBagReducer(sampleBagB, {type: 'RESET'})).toEqual(null)
+  })
 });
