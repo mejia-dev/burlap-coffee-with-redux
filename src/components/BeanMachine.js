@@ -147,7 +147,6 @@ class BeanMachine extends React.Component {
   };
 
   render() {
-    console.log(this.props)
     let currentScreen = null;
     if (this.state.displayInventory === true) {
       currentScreen = (
