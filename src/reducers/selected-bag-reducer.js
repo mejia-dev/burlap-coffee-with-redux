@@ -3,13 +3,15 @@ const selectedBagReducer = (state = {}, action) => {
   switch (action.type) {
     case 'SET_BAG':
       return Object.assign({}, state, {
-          name: name,
-          origin: origin,
-          pricePerPound: pricePerPound,
-          roast: roast,
-          currentPounds: currentPounds,
-          id: id
+        name: name,
+        origin: origin,
+        pricePerPound: pricePerPound,
+        roast: roast,
+        currentPounds: currentPounds,
+        id: id
       });
+    case 'RESET':
+      return null;
     default:
       return state;
   }
