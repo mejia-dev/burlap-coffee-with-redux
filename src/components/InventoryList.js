@@ -6,11 +6,9 @@ export default function InventoryList(props) {
   const styleCenterText = {
     textAlign: "center",
   }
-  return (
-    <React.Fragment>
-      <div style={styleCenterText}>
-        <h3>Inventory</h3>
-        {props.coffeeBagInventory.map((bag) =>
+  let inventoryListStatus = "Inventory is empty";
+  if (props.coffeeBagInventory) {
+    props.coffeeBagInventory.map((bag) =>
           <BagItem
             name={bag.name}
             origin={bag.origin}
@@ -23,7 +21,13 @@ export default function InventoryList(props) {
             onEditClick={props.buttonActionBagCallEdit}
             onSellClick={props.buttonActionBagSellPound}
           />
-        )}
+        )
+  }
+  return (
+    <React.Fragment>
+      <div style={styleCenterText}>
+        <h3>Inventory</h3>
+        {inventoryListStatus}
       </div>
     </React.Fragment>
   );
