@@ -55,7 +55,7 @@ class BeanMachine extends React.Component {
   };
 
   handleButtonDisplayEditBag = (bagID) => {
-    const selectedBag = this.state.dataBagInventory.filter((bag) => bag.id === bagID)[0];
+    const selectedBag = Object.values(this.props.dataBagInventory).filter((bag) => bag.id === bagID)[0];
     this.setState({
       displayInventory: false,
       displayBagChange: true,
@@ -66,7 +66,7 @@ class BeanMachine extends React.Component {
   };
 
   handleButtonDisplayBagDetails = (bagID) => {
-    const selectedBag = this.state.dataBagInventory.filter((bag) => bag.id === bagID)[0];
+    const selectedBag = Object.values(this.props.dataBagInventory).filter((bag) => bag.id === bagID)[0];
     this.setState({
       displayInventory: false,
       displayBagChange: false,
