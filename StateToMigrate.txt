@@ -7,6 +7,7 @@ Shared State:
 
  - dataBagInventory goes to InventoryList as "coffeeBagInventory"
   - may need an Object.values to map items, will investigate
+  - done!
 
  - displayBagChangeMode goes to BagChangeForm as "changeMode"
   - Purely graphical -- can be removed if running close to deadline
