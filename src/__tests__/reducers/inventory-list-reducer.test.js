@@ -51,7 +51,7 @@ describe('inventoryListReducer', () => {
     const action = {
       type: 'DELETE_BAG',
       id: 1
-    }
+    };
     expect(inventoryListReducer(sampleStateForDeletion, action)).toEqual({
       2: {
         name: "Bag2",
