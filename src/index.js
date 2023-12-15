@@ -7,7 +7,7 @@ import { createStore } from 'redux';
 import ticketListReducer from './reducers/ticket-list-reducer';
 import { Provider } from 'react-redux';
 
-const store = createStore(reducer);
+const store = createStore(ticketListReducer);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
