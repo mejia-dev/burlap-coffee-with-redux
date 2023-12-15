@@ -214,7 +214,8 @@ class BeanMachine extends React.Component {
     } else {
       currentScreen = (
         <React.Fragment>
-          <h3>404 Page Not Found</h3>
+          <h3>Welcome!</h3>
+          <p>Select "Show Inventory" or "Add Coffee Bag" to get started.</p>
         </React.Fragment>
       )
     }
