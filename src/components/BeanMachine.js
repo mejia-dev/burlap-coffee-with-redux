@@ -91,20 +91,23 @@ class BeanMachine extends React.Component {
   };
 
   handleButtonDataAddFormSubmit = (newBag) => {
-    const updatedBagInventory = this.state.dataBagInventory.concat({
-      name: newBag.name,
-      origin: newBag.origin,
-      pricePerPound: newBag.pricePerPound,
-      roast: newBag.roast,
-      currentPounds: newBag.currentPounds,
+    const { dispatch } = this.props;
+    const { name, origin, pricePerPound, roast, currentPounds } = newBag;
+    const action = {
+      type: 'ADD_BAG',
+      name: name,
+      origin: origin,
+      pricePerPound: pricePerPound,
+      roast: roast,
+      currentPounds: currentPounds,
       id: v4()
-    });
+    }
+    dispatch(action);
     this.setState({
       displayInventory: true,
       displayBagChange: false,
       displayBagChangeMode: null,
       displayBagDetails: false,
-      dataBagInventory: updatedBagInventory,
       dataBagCurrentlySelected: null
     });
   };
