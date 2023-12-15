@@ -107,14 +107,14 @@ class BeanMachine extends React.Component {
       roast: selectedBag.roast,
       currentPounds: selectedBag.currentPounds - amount,
       id: bagID
-    }
+    };
     dispatch(action);
   };
 
   handleButtonDataAddFormSubmit = (newBag) => {
     const { dispatch } = this.props;
     const { name, origin, pricePerPound, roast, currentPounds } = newBag;
-    const action = {
+    const actionAddToInventory = {
       type: 'ADD_BAG',
       name: name,
       origin: origin,
@@ -122,14 +122,15 @@ class BeanMachine extends React.Component {
       roast: roast,
       currentPounds: currentPounds,
       id: v4()
-    }
-    dispatch(action);
+    };
+    dispatch(actionAddToInventory);
+    const actionResetSelectedBag = {type: 'RESET'};
+    dispatch(actionResetSelectedBag);
     this.setState({
       displayInventory: true,
       displayBagChange: false,
       displayBagChangeMode: null,
       displayBagDetails: false,
-      dataBagCurrentlySelected: null
     });
   };
 
