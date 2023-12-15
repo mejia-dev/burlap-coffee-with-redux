@@ -1,4 +1,4 @@
-import bagChangeModeReducer from "../../reducers/bagChangeModeReducer";
+import bagChangeModeReducer from "../../reducers/bag-change-mode-reducer";
 
 describe('bagChangeModeReducer', () => {
 
