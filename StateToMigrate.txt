@@ -4,6 +4,7 @@ Shared State:
  - dataBagCurrentlySelected goes to BagDetails as "currentBag"
  - dataBagCurrentlySelected goes to BagChangeForm as "currentBag" (as an option for "passedBag" variable)
   - these should be simple. Prop is already an object in both locations.
+  - done!
 
  - dataBagInventory goes to InventoryList as "coffeeBagInventory"
   - may need an Object.values to map items, will investigate
