@@ -1,4 +1,4 @@
-const ticketListReducer = (state = {}, action) => {
+const inventoryListReducer = (state = {}, action) => {
   const { name, origin, pricePerPound, roast, currentPounds, id } = action;
   switch (action.type) {
     case 'ADD_BAG':
@@ -21,4 +21,4 @@ const ticketListReducer = (state = {}, action) => {
   }
 };
 
-export default ticketListReducer;
+export default inventoryListReducer;
