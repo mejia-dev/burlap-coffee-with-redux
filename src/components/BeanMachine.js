@@ -138,12 +138,16 @@ class BeanMachine extends React.Component {
   };
 
   handleButtonDataBagDelete = (bagID) => {
-    const updatedBagInventory = this.state.dataBagInventory.filter((bag) => bag.id !== bagID);
+    const { dispatch } = this.props;
+    const action = {
+      type: 'DELETE_BAG',
+      id: bagID
+    }
+    dispatch(action);
     this.setState({
       displayInventory: true,
       displayBagChange: false,
       displayBagDetails: false,
-      dataBagInventory: updatedBagInventory
     })
   };
 
