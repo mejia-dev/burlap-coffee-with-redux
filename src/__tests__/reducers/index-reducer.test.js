@@ -36,4 +36,18 @@ describe("rootReducer", () => {
     expect(store.getState().dataBagInventory).toEqual(inventoryListReducer({}, action));
   });
 
+  test('Should confirm that SET_BAG action works the same between selectedBagReducer and rootReducer', () => {
+    const action = {
+      type: 'SET_BAG',
+      name: "Arabica",
+      origin: "Brazil",
+      pricePerPound: 10,
+      roast: "light",
+      currentPounds: 130,
+      id: 1
+    }
+    store.dispatch(action);
+    expect(store.getState().dataBagCurrentlySelected).toEqual(selectedBagReducer({}, action));
+  });
+
 });
