@@ -5,6 +5,7 @@ import InventoryList from "./InventoryList";
 import BagChangeForm from "./BagChangeForm";
 import BagDetails from "./BagDetails";
 import { connect } from 'react-redux';
+import PropTypes from "prop-types";
 
 class BeanMachine extends React.Component {
   constructor(props) {
@@ -205,6 +206,16 @@ class BeanMachine extends React.Component {
   };
 }
 
-BeanMachine = connect()(BeanMachine);
+BeanMachine.propTypes = {
+  dataBagInventory: PropTypes.object
+};
+
+const mapStateToProps = state => {
+  return {
+    dataBagInventory: state
+  }
+}
+
+BeanMachine = connect(mapStateToProps)(BeanMachine);
 
 export default BeanMachine;
