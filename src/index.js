@@ -4,10 +4,10 @@ import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux';
-import ticketListReducer from './reducers/ticket-list-reducer';
+import inventoryListReducer from './reducers/inventory-list-reducer';
 import { Provider } from 'react-redux';
 
-const store = createStore(ticketListReducer);
+const store = createStore(inventoryListReducer);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
