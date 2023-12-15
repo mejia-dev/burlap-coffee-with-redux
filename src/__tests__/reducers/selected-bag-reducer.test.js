@@ -26,9 +26,14 @@ describe('selectedBagReducer', () => {
   test("Should set the existing selected bag, replacing any previous value", () => {
     const action = {
       type: 'SET_BAG',
-      bag: sampleBagA
+      name: "Arabica",
+      origin: "Brazil",
+      pricePerPound: 10,
+      roast: "light",
+      currentPounds: 130,
+      id: 1
     }
-    expect(selectedBagReducer({ sampleBagB }, action)).toEqual({
+    expect(selectedBagReducer(sampleBagB, action)).toEqual({
       name: "Arabica",
       origin: "Brazil",
       pricePerPound: 10,
