@@ -4,8 +4,9 @@ import { v4 } from 'uuid';
 import InventoryList from "./InventoryList";
 import BagChangeForm from "./BagChangeForm";
 import BagDetails from "./BagDetails";
+import { connect } from 'react-redux';
 
-export default class BeanMachine extends React.Component {
+class BeanMachine extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,24 +14,24 @@ export default class BeanMachine extends React.Component {
       displayBagChange: false,
       displayBagChangeMode: null,
       displayBagDetails: false,
-      dataBagInventory: [
-        {
-          name: "Arabica",
-          origin: "Brazil",
-          pricePerPound: 10,
-          roast: "light",
-          currentPounds: 130,
-          id: v4()
-        },
-        {
-          name: "Robusta",
-          origin: "India",
-          pricePerPound: 6,
-          roast: "medium",
-          currentPounds: 130,
-          id: v4()
-        },
-      ],
+      // dataBagInventory: [
+      //   {
+      //     name: "Arabica",
+      //     origin: "Brazil",
+      //     pricePerPound: 10,
+      //     roast: "light",
+      //     currentPounds: 130,
+      //     id: v4()
+      //   },
+      //   {
+      //     name: "Robusta",
+      //     origin: "India",
+      //     pricePerPound: 6,
+      //     roast: "medium",
+      //     currentPounds: 130,
+      //     id: v4()
+      //   },
+      // ],
       dataBagCurrentlySelected: null,
     }
   };
@@ -143,12 +144,13 @@ export default class BeanMachine extends React.Component {
   };
 
   render() {
+    console.log(this.props)
     let currentScreen = null;
     if (this.state.displayInventory === true) {
       currentScreen = (
         <React.Fragment>
           <InventoryList
-            coffeeBagInventory={this.state.dataBagInventory}
+            coffeeBagInventory={this.props.dataBagInventory}
             buttonActionBagCallEdit={this.handleButtonDisplayEditBag}
             buttonActionBagSellPound={this.handleButtonDataBagDecrementPounds}
             clickActionViewDetails={this.handleButtonDisplayBagDetails}
@@ -200,3 +202,7 @@ export default class BeanMachine extends React.Component {
     );
   };
 }
+
+BeanMachine = connect()(BeanMachine);
+
+export default BeanMachine;
