@@ -209,12 +209,14 @@ class BeanMachine extends React.Component {
 }
 
 BeanMachine.propTypes = {
-  dataBagInventory: PropTypes.object
+  dataBagInventory: PropTypes.object,
+  dataBagCurrentlySelected: PropTypes.object
 };
 
 const mapStateToProps = state => {
   return {
-    dataBagInventory: state
+    dataBagInventory: state.dataBagInventory,
+    dataBagCurrentlySelected: state.dataBagCurrentlySelected
   }
 }
 
