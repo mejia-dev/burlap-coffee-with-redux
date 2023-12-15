@@ -29,9 +29,12 @@ describe('selectedBagReducer', () => {
       bag: sampleBagA
     }
     expect(selectedBagReducer({ sampleBagB }, action)).toEqual({
-      selectedBag: {
-        sampleBagA
-      }
+      name: "Arabica",
+      origin: "Brazil",
+      pricePerPound: 10,
+      roast: "light",
+      currentPounds: 130,
+      id: 1
     });
   });
 });
