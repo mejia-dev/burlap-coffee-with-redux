@@ -33,7 +33,6 @@ class BeanMachine extends React.Component {
       //     id: v4()
       //   },
       // ],
-      // dataBagCurrentlySelected: null,
     }
   };
 
@@ -124,7 +123,7 @@ class BeanMachine extends React.Component {
       id: v4()
     };
     dispatch(actionAddToInventory);
-    const actionResetSelectedBag = {type: 'RESET'};
+    const actionResetSelectedBag = { type: 'RESET' };
     dispatch(actionResetSelectedBag);
     this.setState({
       displayInventory: true,
@@ -147,7 +146,7 @@ class BeanMachine extends React.Component {
       id: oldBag.id
     }
     dispatch(actionAddToInventory);
-    const actionResetSelectedBag = {type: 'RESET'};
+    const actionResetSelectedBag = { type: 'RESET' };
     dispatch(actionResetSelectedBag);
     this.setState({
       displayInventory: true,
