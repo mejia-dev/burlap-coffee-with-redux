@@ -1,4 +1,4 @@
-# Burlap Coffee Co.
+# Burlap Coffee Co. Inventory Tracker with Redux
 
 #### This project acts as a functional inventory tracker for a coffee company.
 
@@ -12,6 +12,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Technologies Used
 
 * ReactJS
+* Redux
 * HTML
 * CSS
 * JavaScript
