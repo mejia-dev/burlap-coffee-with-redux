@@ -1,5 +1,12 @@
 const bagChangeModeReducer = (state = {}, action) => {
-  return state;
+  switch (action.type) {
+    case 'SET_CHANGE_MODE':
+      return Object.assign({}, state, {
+        mode: action.mode
+      });
+    default:
+      return state;
+  }
 };
 
 export default bagChangeModeReducer;
