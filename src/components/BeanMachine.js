@@ -137,10 +137,14 @@ class BeanMachine extends React.Component {
     dispatch(actionAddToInventory);
     const actionResetSelectedBag = { type: 'RESET' };
     dispatch(actionResetSelectedBag);
+    const actionSetChangeMode = {
+      type: 'SET_CHANGE_MODE',
+      mode: null
+    };
+    dispatch(actionSetChangeMode);
     this.setState({
       displayInventory: true,
       displayBagChange: false,
-      displayBagChangeMode: null,
       displayBagDetails: false,
     });
   };
