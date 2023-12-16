@@ -13,7 +13,7 @@ const inventoryListReducer = (state = {}, action) => {
         }
       });
     case 'DELETE_BAG':
-      let modifiedState = {...state };
+      let modifiedState = { ...state };
       delete modifiedState[id];
       return modifiedState;
     default:
