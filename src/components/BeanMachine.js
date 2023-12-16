@@ -44,10 +44,15 @@ class BeanMachine extends React.Component {
   };
 
   handleButtonDisplayAddBag = () => {
+    const { dispatch } = this.props;
+    const action = {
+      type: 'SET_CHANGE_MODE',
+      mode: "Add"
+    }
+    dispatch(action);
     this.setState({
       displayInventory: false,
       displayBagChange: true,
-      displayBagChangeMode: "Add",
       displayBagDetails: false,
     })
   };
