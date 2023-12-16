@@ -56,4 +56,13 @@ describe("rootReducer", () => {
     expect(store.getState().displayBagChangeMode).toEqual(bagChangeModeReducer({}, { type: null }));
   });
 
+  test('Should confirm that SET_CHANGE_MODE action works the same between bagChangeModeReducer and rootReducer', () => {
+    const action = {
+      type: 'SET_CHANGE_MODE',
+      mode: "Add"
+    }
+    store.dispatch(action);
+    expect(store.getState().displayBagChangeMode).toEqual(bagChangeModeReducer({}, action));
+  });
+
 });
