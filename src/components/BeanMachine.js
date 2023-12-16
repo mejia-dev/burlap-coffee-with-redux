@@ -13,7 +13,6 @@ class BeanMachine extends React.Component {
     this.state = {
       displayInventory: true,
       displayBagChange: false,
-      displayBagChangeMode: null,
       displayBagDetails: false,
       // dataBagInventory: [
       //   {
@@ -232,13 +231,15 @@ class BeanMachine extends React.Component {
 
 BeanMachine.propTypes = {
   dataBagInventory: PropTypes.object,
-  dataBagCurrentlySelected: PropTypes.object
+  dataBagCurrentlySelected: PropTypes.object,
+  displayBagChangeMode: PropTypes.object
 };
 
 const mapStateToProps = state => {
   return {
     dataBagInventory: state.dataBagInventory,
-    dataBagCurrentlySelected: state.dataBagCurrentlySelected
+    dataBagCurrentlySelected: state.dataBagCurrentlySelected,
+    displayBagChangeMode: state.displayBagChangeMode
   }
 }
 
