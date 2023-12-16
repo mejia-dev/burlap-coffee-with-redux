@@ -1,7 +1,7 @@
 {
   "name": "burlap-coffee-co",
   "version": "0.1.0",
-  "homepage": "https://mejia-dev.github.io/burlap-coffee",
+  "homepage": "https://mejia-dev.github.io/burlap-coffee-with-redux",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
