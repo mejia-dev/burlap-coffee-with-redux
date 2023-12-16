@@ -13,25 +13,7 @@ class BeanMachine extends React.Component {
     this.state = {
       displayInventory: true,
       displayBagChange: false,
-      displayBagDetails: false,
-      // dataBagInventory: [
-      //   {
-      //     name: "Arabica",
-      //     origin: "Brazil",
-      //     pricePerPound: 10,
-      //     roast: "light",
-      //     currentPounds: 130,
-      //     id: v4()
-      //   },
-      //   {
-      //     name: "Robusta",
-      //     origin: "India",
-      //     pricePerPound: 6,
-      //     roast: "medium",
-      //     currentPounds: 130,
-      //     id: v4()
-      //   },
-      // ],
+      displayBagDetails: false
     }
   };
 
