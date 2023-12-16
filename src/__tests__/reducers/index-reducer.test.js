@@ -53,7 +53,7 @@ describe("rootReducer", () => {
   });
 
   test('Should confirm that initial state of bagChangeModeReducer matches rootReducer', () => {
-    expect(store.getState().dataBagChangeMode).toEqual(bagChangeModeReducer({}, { type: null }));
+    expect(store.getState().displayBagChangeMode).toEqual(bagChangeModeReducer({}, { type: null }));
   });
 
 });
