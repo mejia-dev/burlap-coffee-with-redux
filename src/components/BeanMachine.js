@@ -215,7 +215,7 @@ class BeanMachine extends React.Component {
     } else if (this.state.displayBagChange === true) {
       let passedBag = {}
       let formSubmissionFunction;
-      if (this.state.displayBagChangeMode === "Edit") {
+      if (this.props.displayBagChangeMode.mode === "Edit") {
         passedBag = this.props.dataBagCurrentlySelected
         formSubmissionFunction = this.handleButtonDataEditFormSubmit
       } else {
@@ -224,7 +224,7 @@ class BeanMachine extends React.Component {
       currentScreen = (
         <React.Fragment>
           <BagChangeForm
-            changeMode={this.state.displayBagChangeMode}
+            changeMode={this.props.displayBagChangeMode.mode}
             currentBag={passedBag}
             onFormSubmit={formSubmissionFunction}
           />
