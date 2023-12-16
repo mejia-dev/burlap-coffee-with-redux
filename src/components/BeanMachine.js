@@ -85,7 +85,7 @@ class BeanMachine extends React.Component {
   handleButtonDisplayBagDetails = (bagID) => {
     const { dispatch } = this.props;
     const selectedBag = Object.values(this.props.dataBagInventory).filter((bag) => bag.id === bagID)[0];
-    const action = {
+    const actionSetSelectedBag = {
       type: 'SET_BAG',
       name: selectedBag.name,
       origin: selectedBag.origin,
@@ -93,12 +93,16 @@ class BeanMachine extends React.Component {
       roast: selectedBag.roast,
       currentPounds: selectedBag.currentPounds,
       id: selectedBag.id
-    }
-    dispatch(action);
+    };
+    dispatch(actionSetSelectedBag);
+    const actionSetChangeMode = {
+      type: 'SET_CHANGE_MODE',
+      mode: null
+    };
+    dispatch(actionSetChangeMode);
     this.setState({
       displayInventory: false,
       displayBagChange: false,
-      displayBagChangeMode: null,
       displayBagDetails: true,
     })
   };
